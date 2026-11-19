@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="再见开屏隐私政策，说明广告过滤、Safari 隐私保护、订阅及本地数据的处理方式。">
+  <title>隐私政策 · 再见开屏</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f7f9;
+      --paper: #ffffff;
+      --ink: #182630;
+      --muted: #65727b;
+      --line: #e4eaee;
+      --accent: #008b98;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.85 -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      overflow-wrap: anywhere;
+    }
+    main {
+      max-width: 840px;
+      margin: 48px auto;
+      padding: 44px 48px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+    .brand {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    h1 { margin: 12px 0; font-size: 34px; line-height: 1.3; }
+    h2 { margin: 0 0 12px; font-size: 21px; line-height: 1.5; }
+    p { margin: 10px 0; }
+    .date, footer { font-size: 14px; color: var(--muted); }
+    .summary {
+      margin: 28px 0;
+      padding: 10px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--bg);
+    }
+    section { padding: 26px 0; border-top: 1px solid var(--line); }
+    ul { margin: 10px 0; padding-left: 23px; }
+    li { margin: 8px 0; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+    footer { padding-top: 22px; border-top: 1px solid var(--line); }
+    @media (max-width: 600px) {
+      main { margin: 0; padding: 32px 22px; border: 0; border-radius: 0; }
+      h1 { font-size: 30px; }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #10181e;
+        --paper: #18242c;
+        --ink: #e7eff3;
+        --muted: #a8b8c0;
+        --line: #30414b;
+        --accent: #65d7df;
+      }
+    }
+    @media print {
+      main { max-width: none; margin: 0; padding: 0; border: 0; }
+      body { background: white; color: black; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand">再见开屏</div>
+    <h1>隐私政策</h1>
+    <p class="date">更新日期：2026年11月19日</p>
+  </header>
+
+  <p>
+    本政策说明再见开屏（以下简称“本应用”）在提供 Safari 广告过滤、
+    App 广告过滤、Safari 隐私防追踪、规则管理、日志及编程课程等功能时，
+    如何处理相关信息。
+  </p>
+
+  <div class="summary">
+    本应用以设备本地处理为主，不要求注册独立账号，
+    不向开发者自建服务器自动上传浏览记录、DNS 查询记录或课程学习记录。
+    订阅购买、公共 DNS 解析、在线规则下载和主动打开的外部链接，
+    会涉及相应第三方服务，下文分别说明。
+  </div>
+
+  <section>
+    <h2>一、Safari 广告过滤与隐私防追踪</h2>
+    <p>
+      本应用通过 Apple Safari 内容拦截器加载规则，
+      由 Safari 根据规则处理匹配的广告资源、第三方追踪脚本或追踪像素。
+      隐私防追踪使用本地内置规则，其开关可独立控制。
+    </p>
+    <p>
+      这些功能需要你在系统设置中允许相应的 Safari 内容拦截器，
+      不依赖本应用的 VPN 配置。本应用不会通过内容拦截器读取网页正文、
+      输入的账号密码或 Safari 浏览历史，也不生成 Safari 逐条访问日志。
+      规则配置和开关状态保存在设备本地。
+    </p>
+  </section>
+
+  <section>
+    <h2>二、App 广告过滤与 DNS 处理</h2>
+    <p>
+      App 广告过滤通过 iOS 网络扩展在设备上处理 DNS 请求，
+      需要你授权添加 VPN 配置。该配置用于本地过滤，
+      不提供远程 VPN 出口，不将网页或 App 的业务流量转发至开发者服务器，
+      不安装用于解密 HTTPS 的证书，也不解密 HTTPS 内容。
+    </p>
+    <p>
+      过滤过程中，扩展会读取接收到的 DNS 查询域名，
+      与本地规则进行匹配，并对匹配请求作出拦截响应。
+      在不同覆盖模式下，扩展接收的 DNS 请求范围有所不同；
+      扩展接收到且需要正常解析的请求，会转发至所选公共 DNS 服务。
+    </p>
+    <ul>
+      <li>当前可选服务包括阿里公共 DNS（223.5.5.5）和腾讯公共 DNS（119.29.29.29）。</li>
+      <li>公共 DNS 服务会收到查询域名及来源网络地址等解析所需信息，其处理适用服务提供方的政策。</li>
+      <li>当前上游解析使用普通 TCP DNS，不属于加密 DNS；网络路径上的相关服务方可能看到这些 DNS 查询。</li>
+    </ul>
+    <p>
+      开发者不通过该过滤功能接收你的 DNS 查询。
+      你可以关闭 App 广告过滤，或在系统设置中管理、移除相应 VPN 配置。
+    </p>
+  </section>
+
+  <section>
+    <h2>三、规则下载、导入与备份</h2>
+    <p>
+      本应用提供本地内置规则，也支持规则更新、第三方规则导入、
+      自定义域名规则及备份。你添加的域名、白名单、规则选择和备份，
+      保存在设备本地，并由主应用与相关扩展通过共享存储使用。
+    </p>
+    <p>
+      手动更新或开启自动检查后，本应用可能从 GitHub 托管的 anti-AD
+      等规则来源下载文件，再在本地筛选和处理。
+      自动检查在应用运行时进行，可以通过相应设置关闭。
+      通过第三方 HTTPS 地址导入规则时，本应用会访问你指定的地址获取文件。
+    </p>
+    <p>
+      下载服务方会收到提供文件所需的网络请求信息，例如 IP 地址和请求路径。
+      本应用不会为了下载规则而向其发送本地拦截日志或规则备份。
+      请勿在规则地址中填写不必要的个人信息；地址中包含的令牌等内容，
+      会随请求发送给该地址的服务方。
+    </p>
+    <p>
+      导出的规则备份包含规则和相关配置，不包含请求日志。
+      导出文件的保存位置和分享对象由你通过系统功能选择。
+    </p>
+  </section>
+
+  <section>
+    <h2>四、本地日志与设置</h2>
+    <p>为展示保护状态、保存偏好和辅助排查，本应用会在设备上处理以下信息：</p>
+    <ul>
+      <li>保护开关、规则配置、显示偏好、规则更新状态及相关本地备份。</li>
+      <li>当前过滤会话的统计和最近拦截记录，包括域名、命中规则、时间及处理状态。</li>
+      <li>你主动填写的实测记录，例如 App 名称、测试结果、网络情况及备注。</li>
+      <li>课程学习进度、练习状态，以及本地推广内容的展示顺序。</li>
+      <li>已确认购买对应的欢迎页展示状态，用于安排之后启动时显示的页面。</li>
+    </ul>
+    <p>
+      最近拦截记录最多保留 100 条，存放于网络扩展的会话内存中，
+      停止该过滤会话后清除。本应用不保存正常放行查询的域名历史。
+      手动实测记录最多保留 200 条，保存在本地，可通过相应入口删除。
+    </p>
+    <p>
+      如果你主动导出诊断报告，报告可能包含系统版本、规则配置、
+      当前会话记录和手动实测内容。报告不会自动发送给开发者；
+      是否分享以及分享给谁由你决定。
+    </p>
+  </section>
+
+  <section>
+    <h2>五、会员、课程订阅与恢复购买</h2>
+    <p>
+      App 会员与两门编程课程的订阅通过 Apple 应用内购买服务完成，
+      各自对应独立权益。本应用使用 StoreKit 获取商品与价格、
+      发起购买、恢复购买，并验证订阅状态。
+    </p>
+    <p>
+      为确认访问权限及处理订阅变化，本应用会处理 Apple 返回的商品标识、
+      交易信息、订阅有效期和退款或撤销状态等。
+      App 广告过滤所需的会员有效期会保存在设备共享存储中，
+      供网络扩展检查权限使用。
+    </p>
+    <p>
+      Apple 负责账户验证及付款。本应用不会获取你的 Apple 账户密码、
+      银行卡号或支付验证码，也不将交易记录发送至开发者自建服务器。
+      Apple 的相关处理适用其
+      <a href="https://www.apple.com/legal/privacy/zh-cn/">隐私政策</a>。
+    </p>
+    <p>
+      你可以通过购买页面的“恢复购买”恢复有效权益，
+      并在 Apple 账户的订阅设置中管理或取消自动续订。
+      删除本应用不会自动取消订阅。
+    </p>
+  </section>
+
+  <section>
+    <h2>六、课程、推广内容与外部链接</h2>
+    <p>
+      课程正文和相关本地资源随应用提供，学习进度保存在设备上。
+      本应用本身不提供需要上传问题、对话或代码的在线 AI 聊天服务。
+    </p>
+    <p>
+      应用中的推广横幅或开屏展示使用本地配置，
+      当前版本不接入第三方广告追踪或用户行为分析 SDK，
+      不使用广告标识符进行跨应用个性化广告追踪。
+    </p>
+    <p>
+      当你主动打开课程实践、代码仓库、App Store 或其他外部链接时，
+      目标服务可能收到 IP 地址、浏览器信息，并可能使用 Cookie 或要求登录。
+      你向目标服务提交的信息，适用该服务自身的隐私政策。
+    </p>
+  </section>
+
+  <section>
+    <h2>七、权限、诊断与数据安全</h2>
+    <p>
+      核心过滤功能需要相应的 Safari 内容拦截器授权或 VPN 配置授权。
+      当前功能不要求访问通讯录、精确位置、相机、麦克风或照片库。
+      文件导入与分享由你通过系统提供的选择界面操作。
+    </p>
+    <p>
+      为排查订阅加载等问题，应用可能在设备系统日志中记录商品标识、
+      加载结果和错误信息。本应用没有将这些日志自动上传至开发者服务器的功能。
+      Apple 可能依据你的系统诊断与共享设置处理崩溃或诊断信息。
+    </p>
+    <p>
+      当前版本不出售个人信息，也不将本地过滤或学习记录提供给广告网络
+      或数据经纪商。本地数据受到操作系统的应用隔离及设备安全机制保护。
+      请妥善保管设备与账户；任何存储或传输方式都无法保证绝对安全。
+    </p>
+  </section>
+
+  <section>
+    <h2>八、你的选择与数据删除</h2>
+    <p>
+      你可以关闭相关保护功能、调整或删除自定义规则、
+      清除可管理的记录、停止自动规则检查，以及选择不导出报告或打开外部链接。
+      Safari 内容拦截器和 VPN 配置也可以通过系统设置管理。
+    </p>
+    <p>
+      本地设置、课程进度和其他持久记录通常保留至被覆盖、主动删除
+      或应用数据被删除。你可以在 iPhone 的
+      “设置 → 通用 → iPhone 储存空间 → 再见开屏”中选择“删除 App”。
+      “卸载 App”会保留文稿与数据，与“删除 App”不同。
+    </p>
+    <p>
+      系统备份可能包含本地数据，从备份恢复时相关记录可能被恢复。
+      如需删除已导出的文件、系统备份或 VPN 配置，请分别在对应位置管理。
+      Apple 保存的购买记录和订阅不会因删除应用而自动删除或取消。
+    </p>
+    <p>
+      本应用没有独立注册账号或开发者端用户资料库，因此无需另行注销应用账号。
+    </p>
+  </section>
+
+  <section>
+    <h2>九、未成年人使用</h2>
+    <p>
+      未成年人请在监护人指导下使用本应用，并在监护人同意下进行订阅购买。
+      使用外部学习服务时，请同时遵守该服务的年龄与账户要求。
+      如对未成年人信息处理有疑问，可通过下述渠道联系开发者。
+    </p>
+  </section>
+
+  <section>
+    <h2>十、本隐私政策网页</h2>
+    <p>
+      本网页不包含分析脚本、广告追踪脚本或信息收集表单，
+      不主动设置 Cookie，也不加载第三方字体。
+      如果通过 GitHub Pages 访问，GitHub 会为提供托管服务及安全目的
+      处理访问请求，包括记录访问者 IP 地址。
+      详情请参阅
+      <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages">GitHub Pages 说明</a>
+      及
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a>。
+      这与本应用在设备上保存的过滤记录和学习记录是不同的数据处理场景。
+    </p>
+  </section>
+
+  <section>
+    <h2>十一、政策更新与联系</h2>
+    <p>
+      当应用功能或数据处理方式发生变化时，我们会相应更新本政策，
+      并修改页面顶部日期。涉及重要变化时，会通过适当方式告知。
+    </p>
+    <p>
+      如对本政策、信息处理或数据删除有疑问，
+      请通过本应用 App Store 产品页面的“App 支持”入口联系开发者。
+      联系时请说明相关功能和问题，避免提供密码、支付凭证等不必要的敏感信息。
+    </p>
+  </section>
+
+  <footer>再见开屏 · 隐私政策</footer>
+</main>
+</body>
+</html>
